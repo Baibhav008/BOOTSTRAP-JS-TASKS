@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task8</title>
+    
+
+    
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        label{
+            color: black;
+            font-family: cursive;
+            font-size: xx-large;
+        }
+    </style>
+
+</head>
+<body style="background-image: url(wall.jpg);
+background-position: center center;
+background-repeat: no-repeat;
+
+background-attachment: fixed;
+background-size: cover;" >
+
+    
+    <div class="container mt-5 mb-5">
+
+        
+        
+        <form class=" p-5 m-auto shadow-lg needs-validation " style="width: 60%; background: linear-gradient(to top, #66ffff 0%, #ff99cc 100%);" novalidate>
+
+            <center>
+                <h3>Registration Form</h3>
+    
+            </center>
+            <br>
+
+            <div class="form-group row">
+              <label for="fname" class="col-sm-4 col-form-label" >
+                <h5>First Name</h5> </label>
+              <div class="col-sm-8">
+                <div class="input-group " style="width: 100%;" >
+    
+                    <input type="text" class="form-control" id="fname" onkeyup="checkStrength()" required onkeyup="checkStrength()"/><span id="msg"></span>
+                    <div class="invalid-feedback">Please your first name</div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="lname" class="col-sm-4 col-form-label">
+                  <h5>Last Name</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                 
+                      <input type="text" class="form-control"  id="lname" onkeyup="checkStrength()" required onkeyup="checkStrength()"/><span id="msg2"></span>
+                      <div class="invalid-feedback">Please enter your last name</div>
+  
+                  </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-sm-4 col-form-label">
+                  <h5>Email</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                      
+                      <input type="email" class="form-control" id="email" onkeyup="checkStrength()" required onkeyup="checkStrength()"/><span id="msg3"></span>
+                      <div class="invalid-feedback">Please enter your email</div>
+  
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="password" class="col-sm-4 col-form-label">
+                  <h5>Password</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                     
+                      <input type="password" class="form-control"  id="password" onkeyup="checkStrength()" required onkeyup="checkStrength()"/><span id="msg4"></span>
+                      <div class="invalid-feedback">Please enter your password</div>
+  
+                  </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group row">
+                <label for="repassword" class="col-sm-4 col-form-label">
+                  <h5>Re-enter Password</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                      <input type="password" class="form-control"  id="repassword" onkeyup="checkStrength()" required onkeyup="checkStrength()"/><span id="msg5"></span>
+                      <div class="invalid-feedback">Please re-enter your password</div>
+  
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="gender" class="col-sm-4 col-form-label">
+                    <h5>Gender</h5> </label>
+                    <div class="col-sm-8">
+                        <div style="width: 100%; font-size: large; color: black ; font-size: larger;" >
+                            <input type="radio" name="gender" style="margin-right: 4px;" /> Male
+                            <br>
+                            <input type="radio" name="gender" style="margin-right: 4px;" /> Female
+                            
+                        </div>
+                      </div>
+              </div>
+
+
+              <div class="form-group row">
+                <label for="age" class="col-sm-4 col-form-label">
+                  <h5>Age</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                      <input type="number" class="form-control"  id="age" required onkeyup="checkStrength()"/><span id="msg6"></span>
+                      <div class="invalid-feedback">Please enter age</div>
+  
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="phone" class="col-sm-4 col-form-label">
+                  <h5>Phone Number</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                     
+                      <input type="tel" class="form-control"id="phone" required onkeyup="checkStrength()"/>
+                      <div class="invalid-feedback" >Please enter your phone number</div><span id="msg7"></span>
+  
+                  </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="address" class="col-sm-4 col-form-label">
+                  <h5>Address</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                    <textarea type="text" class="form-control" id="address" onkeyup="checkStrength()"></textarea>
+                      <div class="invalid-feedback">Please enter your address</div> <span id="msg8"></span>
+  
+                  </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="state" class="col-sm-4 col-form-label">
+                  <h5>State</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                    <input type="text" class="form-control"id="state" required onkeyup="checkStrength()"/>
+                      <div class="invalid-feedback" >Please enter your state</div><span id="msg9"></span>
+  
+                  </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="country" class="col-sm-4 col-form-label">
+                  <h5>Country</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                    <select>
+                        <option>Choose your country</option>
+                        <option>India</option>
+                        <option>Sri Lanka</option>
+                        <option>Bangladesh</option>
+                        <option>Iraq</option>
+                    </select>
+                      <div class="invalid-feedback" >Please your Country</div>
+  
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="lang" class="col-sm-4 col-form-label">
+                  <h5>Language</h5> </label>
+                <div class="col-sm-8">
+                  <div class="input-group " style="width: 100%;" >
+                    <input class="px-1 ms-2" type="checkbox" name="lang" /> English
+                    <input class="px-1 ms-2" type="checkbox" name="lang" /> Kannada
+                    <input class="px-1 ms-2" type="checkbox" name="lang" /> Hindi
+                    <input class="px-1 ms-2" type="checkbox" name="lang" /> Telugu
+                      <div class="invalid-feedback" >Please select language</div>
+  
+                  </div>
+                </div>
+            </div>
+
+            <div>
+                
+            <input type="checkbox" name="declare" />Hereby I declare all the given details are true
+
+            </div>
+
+            <p style="align-items: end; text-align: right;">Login in to <a href="https://ethnus.com/" target="_blank">Ethnus</a> website
+            
+            </p>
+        
+            
+
+            <br>
+            <center>
+                <button type="submit" class="r waves-effect waves-light m-auto  p-2 px-4" style="border-radius: 40px; color: white; font-size: xx-large;background: linear-gradient(to top, #66ffff 0%, #0000cc 100%);">Register</button>
+
+
+
+            </center>
+
+              
+            </div>
+        
+
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>	
+
+
+    
+    <script>
+
+        
+            function checkStrength()
+        {
+            let pwd = document.getElementById("fname").value;
+            if(pwd.length == 0)
+            {
+                document.getElementById("msg").innerHTML = "";
+            }
+            else if(pwd.length < 5)
+            {
+                document.getElementById("msg").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+                
+            }
+            else{
+                document.getElementById("msg").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+            let pwd2 = document.getElementById("lname").value;
+            if(pwd2.length == 0)
+            {
+                document.getElementById("msg2").innerHTML = "";
+            }
+            else if(pwd2.length < 5)
+            {
+                document.getElementById("msg2").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+                
+            }
+            else{
+                document.getElementById("msg2").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+            let pwd3 = document.getElementById("email").value;
+            if(pwd3.length == 0)
+            {
+                document.getElementById("msg3").innerHTML = "";
+            }
+            else if(pwd3.length < 5)
+            {
+                document.getElementById("msg3").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+                
+            }
+            else{
+                document.getElementById("msg3").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+
+            let pwd4 = document.getElementById("password").value;
+            if(pwd4.length == 0)
+            {
+                document.getElementById("msg4").innerHTML = "";
+            }
+            else if(pwd4.length < 5)
+            {
+                document.getElementById("msg4").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+                
+            }
+            else{
+                document.getElementById("msg4").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+
+
+            let pwd5 = document.getElementById("repassword").value;
+            if(pwd5.length == 0)
+            {
+                document.getElementById("msg5").innerHTML = "";
+            }
+            else if(pwd5.length < 5||pwd4!=pwd5)
+            {
+                document.getElementById("msg5").innerHTML = `<span class="alert alert-danger ms-2">Poor or Mismatch</span>`;
+                
+            }
+            else{
+                document.getElementById("msg5").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+
+
+
+
+            let pwd6 = document.getElementById("age").value;
+            if(pwd6.length == 0)
+            {
+                document.getElementById("msg6").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+            }
+            
+            else{
+                document.getElementById("msg6").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+
+
+
+
+            let pwd7 = document.getElementById("phone").value;
+            if(pwd7.length == 0)
+            {
+                document.getElementById("msg7").innerHTML = "";
+            }
+            else if(pwd7.length < 10)
+            {
+                document.getElementById("msg7").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+                
+            }
+            else{
+                document.getElementById("msg7").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+
+            let pwd8 = document.getElementById("address").value;
+            if(pwd8.length == 0)
+            {
+                document.getElementById("msg8").innerHTML = "";
+            }
+            else if(pwd8.length < 10)
+            {
+                document.getElementById("msg8").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+                
+            }
+            else{
+                document.getElementById("msg8").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+            let pwd9 = document.getElementById("state").value;
+            if(pwd9.length == 0)
+            {
+                document.getElementById("msg9").innerHTML = "";
+            }
+            else if(pwd9.length < 3)
+            {
+                document.getElementById("msg9").innerHTML = `<span class="alert alert-danger ms-2">Poor</span>`;
+                
+            }
+            else{
+                document.getElementById("msg9").innerHTML = `<span class="alert alert-success ms-2">Strong</span>`;;
+            }
+
+
+
+            
+
+
+        }
+
+
+
+
+
+        
+			(function () {
+			  'use strict'
+
+			  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+			  var forms = document.querySelectorAll('.needs-validation')
+
+			  // Loop over them and prevent submission
+			  Array.prototype.slice.call(forms)
+			    .forEach(function (form) {
+			      form.addEventListener('submit', function (event) {
+			        if (!form.checkValidity()) {
+			          event.preventDefault()
+			          event.stopPropagation()
+			        }
+
+			        form.classList.add('was-validated')
+			      }, false)
+			    })
+			})()
+
+   </script>
+
+
+</body>
+</html>
